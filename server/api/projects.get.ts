@@ -32,9 +32,16 @@ export default defineEventHandler(async (event) => {
 	let results;
 	if (isCloudflare) {
 		const database: D1Database = context.cloudflare.env.DATABASE;
-		results = await database
+		const query = await database
 			.prepare("SELECT name, author, author_name, description, json(links) as links FROM Projects")
-			.run();
+			.all<Project>();
+
+		query.results.forEach((value) => {
+			if (typeof value.links !== "string") return;
+			value.links = JSON.parse(value.links);
+		});
+
+		results = query.results;
 	} else if (config.public.usesExternalAPI) {
 		if (!config.public.externalAPIAddress) {
 			createError({
