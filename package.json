@@ -19,7 +19,7 @@
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20240405.0",
-		"@iconify-json/mdi": "^1.1.64",
+		"@iconify-json/mdi": "^1.1.66",
 		"@nuxt/devtools": "^1.1.5",
 		"@nuxt/fonts": "^0.5.1",
 		"@nuxt/ui": "^2.15.2",
