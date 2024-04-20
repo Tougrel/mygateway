@@ -18,7 +18,7 @@
 		"pretty": "prettier --write ."
 	},
 	"devDependencies": {
-		"@cloudflare/workers-types": "^4.20240329.0",
+		"@cloudflare/workers-types": "^4.20240405.0",
 		"@iconify-json/mdi": "^1.1.64",
 		"@nuxt/devtools": "^1.1.5",
 		"@nuxt/fonts": "^0.5.1",
